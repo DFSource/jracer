@@ -21,17 +21,17 @@ public class JRacer {
 	private int myX;
 	/** JRacer current y coordinate. */
 	private int myY;
-	// we may also want a direction in the future so we know how to 
+	// we may also want a direction in the future so we know how to
 	// draw the game sprite (we won't start with sprites though)
 	// instead start with generic object (no directions)
 	private Color myColor;
 	// JRacers also leave a 'trail'
 	/** The trail. Note that Java's built in point is mutable. */
 	private List<Point> myTrail;
-	
+
 	/**
-	 * Build a new JRacer object.
-	 * JRacer represents a light cycle on the game board.
+	 * Build a new JRacer object. JRacer represents a light cycle on the game
+	 * board.
 	 * 
 	 * @param theColor the color of this JRacer.
 	 */
@@ -41,16 +41,17 @@ public class JRacer {
 		myY = 10;
 		myColor = theColor;
 	}
-	
-	// each time we change the coordinates, we must add the previous coordinates 
+
+	// each time we change the coordinates, we must add the previous coordinates
 	// to the 'trail'
-	
+
 	public int getMyX() {
 		return myX;
 	}
 
 	/**
 	 * Set new x coordinate.
+	 * 
 	 * @param myX the new x coordinate.
 	 */
 	public void setMyX(int myX) {
@@ -79,6 +80,5 @@ public class JRacer {
 	public void setMyColor(Color myColor) {
 		this.myColor = myColor;
 	}
-	
-	
+
 }

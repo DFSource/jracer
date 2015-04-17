@@ -8,6 +8,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -38,11 +39,26 @@ public class GamePanel extends JPanel {
 		myTimer.start(); // starts the timer.
 		// restart restarts, stop stops.
 	}
+	
+	public void paintComponent(Graphics g) {
+	    // Let UI Delegate paint first, which 
+	    // includes background filling since 
+	    // this component is opaque.
+
+	    super.paintComponent(g);    
+	    g.setColor(Color.RED);
+	    g.drawRect(10, 10, 10, 10);
+	}  
+	
+	public void redraw() {
+		this.repaint();
+		System.out.println("Screen has been redrawn");
+	}
 
 	ActionListener gameTimer = new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent theEvent) {
-			System.out.println("test");
+			redraw();
 		}
 	};
 
